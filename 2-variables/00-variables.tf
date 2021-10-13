@@ -23,7 +23,7 @@ variable "resource_pool_id" {
 
 variable "datastore_id" {
   type = string
-  default = "61616fc6-29c06bff-6af2-000c293e98c9"
+  default = "61657ae3-e5730763-7108-000c293e98c9"
 }
 
 variable "num_cpus" {
