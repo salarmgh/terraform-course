@@ -12,3 +12,13 @@ resource "vsphere_vmfs_datastore" "datastore" {
     "mpx.vmhba0:C0:T1:L0",
   ]
 }
+
+data "vsphere_datacenter" "dc" {
+  name = "dc1"
+}
+
+data "vsphere_resource_pool" "pool" {
+  name          = "cluster1/Resources"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+

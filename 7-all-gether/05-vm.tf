@@ -1,21 +1,10 @@
-provider "vsphere" {
-  user           = var.user.username
-  password       = var.user.password
-  vsphere_server = var.user.vsphere_server
-
-  # If you have a self-signed cert
-  allow_unverified_ssl = true
-
-  version = "1.15.0"
-}
-
 data "vsphere_network" "network" {
   name          = vsphere_host_port_group.pg.name
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 resource "vsphere_virtual_machine" "vm" {
-  name             = "terraform-test"
+  name             = var.vm_name
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = vsphere_vmfs_datastore.datastore.id
 
@@ -31,7 +20,8 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   disk {
-    label = "disk0"
-    size  = 20
+    label = var.disk.label
+    size  = var.disk.size
   }
 }
+
