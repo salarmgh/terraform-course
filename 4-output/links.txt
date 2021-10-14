@@ -1,1 +1,1 @@
-https://www.terraform.io/docs/language/data-sources/index.html
+https://www.terraform.io/docs/language/values/outputs.html

@@ -6,5 +6,5 @@ provider "vsphere" {
   # If you have a self-signed cert
   allow_unverified_ssl = true
 
-  version = "1.15.0"
+  #version = "1.15.0"
 }

@@ -1,0 +1,1 @@
+https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/resources/vmfs_datastore
